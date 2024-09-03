@@ -1,5 +1,6 @@
 {
   "name":"TABNEWS",
+  "author": "Emerson",
   "version": "1.0.0",
   "description": "Teste codespaces",
   "main": "index.js",
