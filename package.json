@@ -1,15 +1,20 @@
 {
-  "name":"TABNEWS",
+  "name": "TABNEWS",
   "author": "Emerson",
   "version": "1.0.0",
   "description": "Teste codespaces",
   "main": "index.js",
   "scripts": {
-    "dev": "next dev"
+    "dev": "next dev",
+    "lint:check": "prettier --check .",
+    "lint:fix": "prettier --write ."
   },
   "dependencies": {
     "next": "^13.1.6",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "prettier": "^3.3.3"
   }
 }
