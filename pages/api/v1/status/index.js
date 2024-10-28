@@ -34,15 +34,14 @@ async function status(request, response) {
   //select no postgree para identificar o numero de conexões ativas
   //text = "SELECT * FROM pg_stat_activity WHERE state = 'active'";
   //:: é um type casting convertendo o count para int
-  //'$(dnname)' parametro dinamico
+  //'$1' parametro dinamico
   const dbname = process.env.POSTGRES_DB; //"local_db";
   const resultac = await database.query({
     text: "select count(*)::int  from pg_stat_activity WHERE  datname = $1;",
     values: [dbname],
-    //    "SELECT * FROM pg_stat_activity WHERE state = 'active'",
   });
   const dbOpenConections = resultac.rows[0].count;
-  console.log(dbOpenConections);
+
   //let conectionsUsed = parseInt(numberString);
   response.status(200).json({
     updated_at: updatedAt,
