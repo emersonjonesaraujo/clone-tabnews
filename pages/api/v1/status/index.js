@@ -41,7 +41,7 @@ async function status(request, response) {
     values: [dbname],
   });
   const dbOpenConections = resultac.rows[0].count;
-
+  console.log(dbOpenConections);
   //let conectionsUsed = parseInt(numberString);
   response.status(200).json({
     updated_at: updatedAt,
