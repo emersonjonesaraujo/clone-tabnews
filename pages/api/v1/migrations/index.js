@@ -20,7 +20,7 @@ export default async function migrations(request, response) {
     await dbClient.end();
     return response.status(200).json(pendingMigrations);
   }
-
+  //
   if (request.method === "POST") {
     const migratedMigrations = await migrationsRunner({
       ...defaultMigrationsOptions,
