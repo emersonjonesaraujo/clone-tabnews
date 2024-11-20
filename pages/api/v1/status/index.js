@@ -41,6 +41,7 @@ async function status(request, response) {
     values: [dbname],
   });
   const dbOpenConections = resultac.rows[0].count;
+  const dbHost = process.env.POSTGRES_HOST;
 
   //let conectionsUsed = parseInt(numberString);
   response.status(200).json({
@@ -48,6 +49,7 @@ async function status(request, response) {
     dependencies: {
       database: {
         db_name: dbname,
+        Host: dbHost,
         version_pg: databaseVersionValue,
         max_conections: dbMaxConections,
         conections_used: dbOpenConections,
