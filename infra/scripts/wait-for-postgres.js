@@ -10,6 +10,7 @@ function checkPostgres() {
       checkPostgres();
       return;
     }
+    //emojis windows + ..
     console.log("\n🟢 Postgress está aceitando conexões!\n");
   }
 }
