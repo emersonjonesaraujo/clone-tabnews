@@ -1,4 +1,10 @@
 //Sempre que o run npm test:watch é executado este JS será executado
+import orchestrator from "Tests/orchestrator";
+
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
+});
+
 test("GET to /api/v1/status should return 200", async () => {
   //teste para identificar se conexão da pasta status está funcionando
   const response = await fetch("http://localhost:3000/api/v1/status");
