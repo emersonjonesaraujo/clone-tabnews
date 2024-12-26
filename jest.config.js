@@ -17,6 +17,7 @@ const createJestConfig = nextJest({
 //e também para o JEST resolver os módulos a partir da raiz do projeto ->"<rootDir>
 const jestConfig = createJestConfig({
   moduleDirectories: ["node_modules", "<rootDir>"],
+  testTimeout: 60000,
 });
 
 module.exports = jestConfig;

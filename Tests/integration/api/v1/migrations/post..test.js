@@ -1,12 +1,14 @@
 //Sempre que o run npm test:watch é executado este JS será executado
 //só é possivel o import por causa do jest.config
 import database from "infra/database";
+//Sempre que o run npm test:watch é executado este JS será executado
+import orchestrator from "Tests/orchestrator"; //aula 29
 
-beforeAll(cleanDatabase);
-
-async function cleanDatabase() {
+//aula 29
+beforeAll(async () => {
+  await orchestrator.waitForAllServices();
   await database.query("drop schema public cascade; create schema public;");
-}
+});
 
 //Sempre que o run npm test:watch é executado este JS será executado
 test("POST to /api/v1/migrations should return 200", async () => {
